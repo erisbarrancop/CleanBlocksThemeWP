@@ -199,6 +199,7 @@ class JSXBLock {
 
 new JSXBLock('banner');
 new JSXBLock('genericheading');
+new JSXBLock('genericbutton');
 /*
 function test_project_post_types(){
     register_post_type('event', array(
