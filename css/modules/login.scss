@@ -1,0 +1,31 @@
+/* Customize Login Screen */
+
+body.login .button-primary {
+  background-color: #F95738;
+  border-color: scale-color(#F95738, $lightness: -10%);
+  text-shadow: 0 -1px 1px scale-color(#F95738, $lightness: -15%), 1px 0 1px scale-color(#F95738, $lightness: -15%), 0 1px 1px scale-color(#F95738, $lightness: -15%), -1px 0 1px scale-color(#F95738, $lightness: -15%);
+  box-shadow: 0 1px 0 scale-color(#F95738, $lightness: -20%);
+}
+
+body.login .button-primary:active,
+body.login .button-primary:focus,
+body.login .button-primary:hover {
+  background-color: scale-color(#F95738, $lightness: -9%);
+  border-color: #F95738;
+  text-shadow: 0 -1px 1px scale-color(#F95738, $lightness: -20%), 1px 0 1px scale-color(#F95738, $lightness: -20%), 0 1px 1px scale-color(#F95738, $lightness: -20%), -1px 0 1px scale-color(#F95738, $lightness: -20%);
+  box-shadow: 0 1px 0 scale-color(#F95738, $lightness: -25%);
+}
+
+body.login {
+  background-color: #f4d6fd;
+}
+
+.login h1 a {
+  color: #0D3B66;
+  font-size: 30px;
+  font-weight: 300;
+  background-image: none;
+  width: auto;
+  height: auto;
+  text-indent: 0;
+}

@@ -1,0 +1,56 @@
+.page-links {
+  position: relative;
+  z-index: 1;
+  background-color: #FAF0CA;
+  margin: 0 0 40px 0;
+  @include mixins.atSmallMedium {
+    margin: 0 0 40px 20px;
+    width: 300px;
+    float: right;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #0D3B66;
+    color: #fff;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      background-color: #0D3B66;
+    }
+  }
+
+  li {
+    border-top: 1px solid adjust-color(#FAF0CA, $lightness: -14%);
+  }
+
+  li:first-child {
+    border-top: none;
+  }
+
+  &__active,
+  & .current_page_item {
+    text-align: center;
+    background-color: scale-color(#FAF0CA, $lightness: -7%, $saturation: -10%);
+    color: #0D3B66;
+    font-weight: bold;
+  }
+
+  li a {
+    display: block;
+    text-align: center;
+    padding: 17px 10px;
+    text-decoration: none;
+    color: #0D3B66;
+    transition: all 0.3s;
+  }
+
+  li a:hover {
+    color: adjust-color(#0D3B66, $lightness: -6%);
+    background-color: scale-color(#FAF0CA, $lightness: -9%, $saturation: -12%);
+  }
+}
