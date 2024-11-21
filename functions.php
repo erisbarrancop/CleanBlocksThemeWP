@@ -246,6 +246,7 @@ new PlaceholderBlock("footer");
 new JSXBLock('banner', true, ['fallbackimage' => get_theme_file_uri('/images/library-hero.jpg')]);
 new JSXBLock('genericheading', false);
 new JSXBLock('genericbutton');
-
+new JSXBLock('slideshow', true);
+new JSXBLock('slide', true);
 
 
