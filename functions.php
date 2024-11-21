@@ -184,21 +184,35 @@ function makeNotePrivate($data, $postarr){
 
 
 class JSXBLock {
-    function __construct($name){
+    function __construct($name, $renderCallback = null){
         $this->name = $name;
+        $this->renderCallback = $renderCallback;
         add_action('init', [$this, 'onInit']);
     }
 
+    function ourRenderCallback($attributes, $content){
+        ob_start();
+        require get_theme_file_path("/our-blocks/{$this->name}.php");
+        return ob_get_clean();
+    }
+    
     function onInit(){
         wp_register_script($this->name, get_stylesheet_directory_uri() ."/build/{$this->name}.js",array('wp-blocks','wp-editor'));
-        register_block_type("ourblocktheme/{$this->name}", array(
+        
+        $ourArgs = array(
             'editor_script' => $this->name
-        )); 
+        );
+
+        if($this->renderCallback){
+            $ourArgs['render_callback'] = [$this, 'ourRenderCallback'];
+        }
+
+        register_block_type("ourblocktheme/{$this->name}", $ourArgs); 
     }
 }
 
-new JSXBLock('banner');
-new JSXBLock('genericheading');
+new JSXBLock('banner', true);
+new JSXBLock('genericheading', false);
 new JSXBLock('genericbutton');
 /*
 function test_project_post_types(){
