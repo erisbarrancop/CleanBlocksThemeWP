@@ -184,8 +184,9 @@ function makeNotePrivate($data, $postarr){
 
 
 class JSXBLock {
-    function __construct($name, $renderCallback = null){
+    function __construct($name, $renderCallback = null, $data = null){
         $this->name = $name;
+        $this->data = $data;
         $this->renderCallback = $renderCallback;
         add_action('init', [$this, 'onInit']);
     }
@@ -199,6 +200,10 @@ class JSXBLock {
     function onInit(){
         wp_register_script($this->name, get_stylesheet_directory_uri() ."/build/{$this->name}.js",array('wp-blocks','wp-editor'));
         
+        if($this->data){
+            wp_localize_script($this->name, $this->name, $this->data);
+        }        
+
         $ourArgs = array(
             'editor_script' => $this->name
         );
@@ -211,28 +216,9 @@ class JSXBLock {
     }
 }
 
-new JSXBLock('banner', true);
+new JSXBLock('banner', true, ['fallbackimage' => get_theme_file_uri('/images/library-hero.jpg')]);
 new JSXBLock('genericheading', false);
 new JSXBLock('genericbutton');
-/*
-function test_project_post_types(){
-    register_post_type('event', array(
-        'rewrite' => array('slug' => 'events'),
-        'has_archive' => true,
-        'public' => true,
-        'labels' => array(
-            'name'=> 'Events',
-            'add_new_item'=> 'Add New Event',
-            'edit_item'=> 'Edit Event',
-            'all_items'=> 'All Events',
-            'singular_name'=> 'Event'
-        ),
-        'menu_icon'=> 'dashicons-calendar'
 
-    ));
-}
-
-add_action('init', 'test_project_post_types');
-*/
 
 
