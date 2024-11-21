@@ -247,6 +247,6 @@ new JSXBLock('banner', true, ['fallbackimage' => get_theme_file_uri('/images/lib
 new JSXBLock('genericheading', false);
 new JSXBLock('genericbutton');
 new JSXBLock('slideshow', true);
-new JSXBLock('slide', true);
+new JSXBLock('slide', true, ['themeimagepath' => get_theme_file_uri('/images/')]);
 
 

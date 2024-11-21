@@ -10,6 +10,7 @@ registerBlockType("ourblocktheme/slide", {
     align: ["full"]
   },
   attributes: {
+    themeimage: {type: "string"},
     align: { type: "string", default: "full" },
     imgID: {type: "number"},
     imgURL: {type: "string", default: banner.fallbackimage}
@@ -19,14 +20,21 @@ registerBlockType("ourblocktheme/slide", {
 })
 
 function EditComponent(props) {
-  useEffect(function (){
+
+  useEffect(function(){
+    if(props.attributes.themeimage){
+      props.setAttributes({imgURL: `${slide.themeimagepath}${props.attributes.themeimage}`})
+    }
+  }, [])
+  useEffect(
+    function (){
     if(props.attributes.imgID){
       async function go() {
         const response = await apiFetch({
           path: `/WP/v2/media/${props.attributes.imgID}`,
           method: "GET"
         })
-        props.setAttributes({imgURL: response.media_details.sizes.pageBanner.source_url})
+        props.setAttributes({themeimage: "", imgURL: response.media_details.sizes.pageBanner.source_url})
       }
       go()
     }
