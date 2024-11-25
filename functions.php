@@ -239,9 +239,18 @@ class PlaceholderBlock {
     }
 }
 
-new PlaceholderBlock("eventsandblogs");
-new PlaceholderBlock("header");
-new PlaceholderBlock("footer");
+// Reg our new modern blocks
+function our_new_blocks(){
+    register_block_type_from_metadata(__DIR__ . '/build/footer');
+    register_block_type_from_metadata(__DIR__ . '/build/header');
+    register_block_type_from_metadata(__DIR__ . '/build/eventsandblogs');
+}
+
+add_action('init','our_new_blocks');
+
+//new PlaceholderBlock("eventsandblogs");
+//new PlaceholderBlock("header");
+//new PlaceholderBlock("footer");
 new PlaceholderBlock("singlepost");
 new PlaceholderBlock("page");
 new PlaceholderBlock("blogindex");
