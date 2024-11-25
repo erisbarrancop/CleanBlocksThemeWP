@@ -253,6 +253,8 @@ function our_new_blocks(){
     register_block_type_from_metadata(__DIR__ . '/build/mynotes');
     register_block_type_from_metadata(__DIR__ . '/build/eventarchive');
     register_block_type_from_metadata(__DIR__ . '/build/singleevent');
+    register_block_type_from_metadata(__DIR__ . '/build/campusarchive');
+    register_block_type_from_metadata(__DIR__ . '/build/singlecampus');
 }
 
 add_action('init','our_new_blocks');
@@ -269,8 +271,8 @@ add_action('init','our_new_blocks');
 //new PlaceholderBlock("mynotes");
 //new PlaceholderBlock("eventarchive");
 //new PlaceholderBlock("singleevent");
-new PlaceholderBlock("campusarchive");
-new PlaceholderBlock("singlecampus");
+//new PlaceholderBlock("campusarchive");
+//new PlaceholderBlock("singlecampus");
 
 new JSXBLock('banner', true, ['fallbackimage' => get_theme_file_uri('/images/library-hero.jpg')]);
 new JSXBLock('genericheading', false);
