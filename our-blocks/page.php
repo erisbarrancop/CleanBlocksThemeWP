@@ -2,8 +2,6 @@
 <?php 
 
     pageBanner(array(
-        'title' => 'This is the title!',
-        'subtitle' => 'This is the subtitle!',
         'photo' => 'https://media.istockphoto.com/id/485371557/photo/twilight-at-spirit-island.jpg?s=612x612&w=0&k=20&c=FSGliJ4EKFP70Yjpzso0HfRR4WwflC6GKfl4F3Hj7fk='
     ));
     ?>

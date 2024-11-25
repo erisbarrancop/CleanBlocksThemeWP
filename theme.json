@@ -1,55 +1,62 @@
 {
     "version": 2,
-    "styles":{
+    "styles": {
         "blocks": {
             "core/button": {
                 "color": {
-                    "text":"#FFFFFF",
+                    "text": "#FFFFFF",
                     "background": "var(--wp--preset--color--primary)"
                 }
             }
         }
     },
-    "settings":{
-        "typography":{
+    "settings": {
+        "typography": {
             "fontSizes": []
         },
-        "blocks":{
+        "blocks": {
             "core/button": {
                 "border": {
-                    "color":false,
+                    "color": false,
                     "radius": false,
                     "style": false,
-                    "width":false
+                    "width": false
                 }
             }
         },
-        "color":{
+        "color": {
             "palette": [
                 {
-                    "slug":"primary",
-                    "color":"#0d3b66",
+                    "slug": "primary",
+                    "color": "#0d3b66",
                     "name": "Primary"
                 },
                 {
-                    "slug":"secondary",
-                    "color":"#EE964B",
+                    "slug": "secondary",
+                    "color": "#EE964B",
                     "name": "Secondary"
                 },
                 {
-                    "slug":"background",
-                    "color":"#FFFFFF",
+                    "slug": "background",
+                    "color": "#FFFFFF",
                     "name": "Background"
                 },
                 {
-                    "slug":"foreground",
-                    "color":"#333333",
+                    "slug": "foreground",
+                    "color": "#333333",
                     "name": "Foreground"
                 }
             ]
         },
-        "layout":{
+        "layout": {
             "contentSize": "840px"
-        }
+        },
+        "customTemplates": [
+            {
+                "name": "emptycanvas",
+                "postTypes": ["page"],
+                "title": "Empty Canvas"
+            }
+        ]
     }
 }

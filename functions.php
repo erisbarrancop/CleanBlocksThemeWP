@@ -245,11 +245,31 @@ new PlaceholderBlock("footer");
 new PlaceholderBlock("singlepost");
 new PlaceholderBlock("page");
 new PlaceholderBlock("blogindex");
+new PlaceholderBlock("programarchive");
+new PlaceholderBlock("singleprogram");
+new PlaceholderBlock("singleprofessor");
+new PlaceholderBlock("mynotes");
+new PlaceholderBlock("eventarchive");
+new PlaceholderBlock("singleevent");
+new PlaceholderBlock("campusarchive");
+new PlaceholderBlock("singlecampus");
 
 new JSXBLock('banner', true, ['fallbackimage' => get_theme_file_uri('/images/library-hero.jpg')]);
 new JSXBLock('genericheading', false);
 new JSXBLock('genericbutton');
 new JSXBLock('slideshow', true);
 new JSXBLock('slide', true, ['themeimagepath' => get_theme_file_uri('/images/')]);
+
+function myallowedblocks($allowed_block_types, $editor_context){
+    
+    if(!empty($editor_context->post)){
+        return $allowed_block_types;
+    }
+
+    return array('ourblocktheme/header','ourblocktheme/footer');
+
+}
+
+add_filter('allowed_block_types_all','myallowedblocks',10,2);
 
 
