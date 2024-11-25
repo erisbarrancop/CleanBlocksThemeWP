@@ -216,31 +216,11 @@ class JSXBLock {
     }
 }
 
-
-class PlaceholderBlock {
-    function __construct($name){
-        $this->name = $name;
-        add_action('init', [$this, 'onInit']);
-    }
-
-    function ourRenderCallback($attributes, $content){
-        ob_start();
-        require get_theme_file_path("/our-blocks/{$this->name}.php");
-        return ob_get_clean();
-    }
-    
-    function onInit(){
-        wp_register_script($this->name, get_stylesheet_directory_uri() ."/our-blocks/{$this->name}.js",array('wp-blocks','wp-editor'));
-                
-        register_block_type("ourblocktheme/{$this->name}", array(
-            'editor_script' => $this->name,
-            'render_callback' => [$this, 'ourRenderCallback']
-        )); 
-    }
-}
-
 // Reg our new modern blocks
 function our_new_blocks(){
+    wp_localize_script('wp-editor', 'ourThemeData', array('themePath'=> get_stylesheet_directory_uri()));
+    
+    register_block_type_from_metadata(__DIR__ . '/build/banner');
     register_block_type_from_metadata(__DIR__ . '/build/footer');
     register_block_type_from_metadata(__DIR__ . '/build/header');
     register_block_type_from_metadata(__DIR__ . '/build/eventsandblogs');
@@ -274,7 +254,7 @@ add_action('init','our_new_blocks');
 //new PlaceholderBlock("campusarchive");
 //new PlaceholderBlock("singlecampus");
 
-new JSXBLock('banner', true, ['fallbackimage' => get_theme_file_uri('/images/library-hero.jpg')]);
+//new JSXBLock('banner', true, ['fallbackimage' => get_theme_file_uri('/images/library-hero.jpg')]);
 new JSXBLock('genericheading', false);
 new JSXBLock('genericbutton');
 new JSXBLock('slideshow', true);
