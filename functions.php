@@ -247,6 +247,7 @@ function our_new_blocks(){
     register_block_type_from_metadata(__DIR__ . '/build/singlepost');
     register_block_type_from_metadata(__DIR__ . '/build/page');
     register_block_type_from_metadata(__DIR__ . '/build/blogindex');
+    register_block_type_from_metadata(__DIR__ . '/build/programarchive');
 }
 
 add_action('init','our_new_blocks');
@@ -257,7 +258,7 @@ add_action('init','our_new_blocks');
 //new PlaceholderBlock("singlepost");
 //new PlaceholderBlock("page");
 //new PlaceholderBlock("blogindex");
-new PlaceholderBlock("programarchive");
+//new PlaceholderBlock("programarchive");
 new PlaceholderBlock("singleprogram");
 new PlaceholderBlock("singleprofessor");
 new PlaceholderBlock("mynotes");
