@@ -251,6 +251,7 @@ function our_new_blocks(){
     register_block_type_from_metadata(__DIR__ . '/build/singleprogram');
     register_block_type_from_metadata(__DIR__ . '/build/singleprofessor');
     register_block_type_from_metadata(__DIR__ . '/build/mynotes');
+    register_block_type_from_metadata(__DIR__ . '/build/eventarchive');
 }
 
 add_action('init','our_new_blocks');
@@ -265,7 +266,7 @@ add_action('init','our_new_blocks');
 //new PlaceholderBlock("singleprogram");
 //new PlaceholderBlock("singleprofessor");
 //new PlaceholderBlock("mynotes");
-new PlaceholderBlock("eventarchive");
+//new PlaceholderBlock("eventarchive");
 new PlaceholderBlock("singleevent");
 new PlaceholderBlock("campusarchive");
 new PlaceholderBlock("singlecampus");
