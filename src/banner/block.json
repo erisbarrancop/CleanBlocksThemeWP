@@ -4,22 +4,14 @@
     "name": "ourblocktheme/banner",
     "title": "Banner",
     "supports": {
-        "align": [
-            "full"
-        ]
+      "align": ["full"]
     },
     "attributes": {
-        "align": {
-            "type": "string",
-            "default": "full"
-        },
-        "imgID": {
-            "type": "number"
-        },
-        "imgURL": {
-            "type": "string"
-        }
+      "align": { "type": "string", "default": "full" },
+      "imgID": { "type": "number" },
+      "imgURL": { "type": "string" }
     },
     "editorScript": "file:./index.js",
     "render": "file:./render.php"
-}
+  }
+  

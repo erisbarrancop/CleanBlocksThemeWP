@@ -235,6 +235,7 @@ function our_new_blocks(){
     register_block_type_from_metadata(__DIR__ . '/build/singleevent');
     register_block_type_from_metadata(__DIR__ . '/build/campusarchive');
     register_block_type_from_metadata(__DIR__ . '/build/singlecampus');
+    register_block_type_from_metadata(__DIR__ . '/build/pastevents');
 }
 
 add_action('init','our_new_blocks');

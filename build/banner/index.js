@@ -43,7 +43,7 @@ function Edit(props) {
     if (props.attributes.imgID) {
       async function go() {
         const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
-          path: `/WP/v2/media/${props.attributes.imgID}`,
+          path: `/wp/v2/media/${props.attributes.imgID}`,
           method: "GET"
         });
         props.setAttributes({
